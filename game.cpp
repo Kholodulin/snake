@@ -11,7 +11,7 @@ GameField::GameField(){
 void GameField::setPauseStatus()
 {
     QString text;
-    isPause ? moveSnakeTimer->stop() : moveSnakeTimer->start(100);
+    isPause ? moveSnakeTimer->stop() : moveSnakeTimer->start(200 - Settings::getInstance()->getSpeed());
     isPause ? text="\nпродолжить - ПРОБЕЛ" : text="\nпауза - ПРОБЕЛ";
     emit changeText("счет : "+ QString::number(score)+ text);
 }
